@@ -275,3 +275,18 @@
     margin-top: 5px;
     color: #999;
 }
+.appicons{
+    margin: 30px;
+  }
+  .appicons a{
+    text-decoration: none;
+    font-size: 35px;
+    margin-right: 15px;
+    color: rgb(253, 171, 8);
+    display: inline-block;
+    transition: transform 0.5s;
+  }
+  .appicons a:hover{
+    color: yellow;
+    transform:translateY(-5px)
+  }

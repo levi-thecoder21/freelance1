@@ -368,16 +368,17 @@
     }
   
     /* Adjust app icons to be displayed inline */
-    .appicons {
-      display: flex; /* Use flexbox for horizontal layout */
-      justify-content: flex-start; /* Align icons to the start */
-      flex-wrap: wrap; /* Allow wrapping if necessary */
-      margin-bottom: 10px; /* Add margin below app icons */
+    .appicons a{
+      text-decoration: none;
+      font-size: 35px;
+      margin-right: 15px;
+      color: rgb(253, 171, 8);
+      display: inline-block;
+      transition: transform 0.5s;
     }
-  
-    .appicons a {
-      margin-right: 10px; /* Space between icons */
-      font-size: 25px; /* Adjust icon size for mobile */
+    .appicons a:hover{
+      color: yellow;
+      transform:translateY(-5px)
     }
   
     /* Contact Us section */
