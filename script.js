@@ -1,27 +1,35 @@
-// Ensure the script runs after the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    
-  // Check if the button with id "subbtn" exists on the page
-  var subButton = document.getElementById("subbtn");
-  if (subButton) {
-      // Add the event listener to the "subbtn" button
-      subButton.addEventListener("click", function(event) {
-          event.preventDefault(); // Prevent form submission
-          
-          // Ensure the message element exists and set the message
-          var message = document.getElementById("message");
-          if (message) {
-              message.innerText = "Thanks for subscribing!";
-              
-              // Clear the message after 5 seconds
-              setTimeout(function() {
-                  message.innerText = "";
-              }, 5000);
-          } else {
-              console.error("Message element not found.");
-          }
-      });
-  } else {
-      console.error("Subscribe button not found.");
-  }
+    const subbtnn = document.getElementById("subbtn");
+    subbtnn.addEventListener("click", (e) => {
+        e.preventDefault();
+        var emailvar = document.getElementById("subbtn-input").value;
+        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        var message = document.getElementById("message");
+        if(emailvar === ""){
+            alert("Please enter an email address");
+        }
+        else if(!emailvar.toLowerCase().match(regex)){
+            message.innerText = "enter valid email";
+                setTimeout(function() {
+                    message.innerText = "";
+                }, 5000);
+        }
+        else {
+            if (message) {
+                message.innerText = "Thanks for subscribing!";
+                setTimeout(function() {
+                    message.innerText = "";
+                }, 5000);
+            }
+        }
+    });
+
 });
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.error(`Section with ID '${sectionId}' not found.`);
+    }
+}
